@@ -32,7 +32,7 @@ export default function Home() {
   });
 
   useEffect(() => {
-    axios.get('https://www.omdbapi.com/?apikey=b5382e81&type=movie&s=spider')
+    axios.get('http://www.omdbapi.com/?i=tt3896198&apikey=fbad3dc2&type=movie&s=spider')
       .then(res => {
         setState(prevState => ({
           ...prevState,
@@ -51,7 +51,7 @@ export default function Home() {
   };
 
   const openDetails = (id: string) => {
-    axios.get(`https://www.omdbapi.com/?i=${id}&apikey=b5382e81`)
+    axios.get(`https://www.omdbapi.com/?i=${id}&apikey=fbad3dc2`)
       .then(({ data }) => {
         setState(prevState => ({
           ...prevState,
@@ -63,7 +63,7 @@ export default function Home() {
 
   const SearchResult = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      axios.get(`https://www.omdbapi.com/?apikey=b5382e81&s=${state.search}`)
+      axios.get(`https://www.omdbapi.com/?apikey=fbad3dc2&s=${state.search}`)
         .then(res => {
           setState(prevState => ({
             ...prevState,
