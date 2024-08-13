@@ -4,7 +4,7 @@ import MovieDetails from './MovieDetails';
 import Result from './Result';
 import Search from './Search';
 
-function HomePage() {
+export default function Home() {
     const [state, setState] = useState({
         search: "",
         results: [],
@@ -78,5 +78,3 @@ function HomePage() {
         </div>
     );
 }
-
-export default HomePage;
