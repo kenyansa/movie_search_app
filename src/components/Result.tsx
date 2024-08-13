@@ -1,18 +1,31 @@
-import '../App.css'
 
+interface ResultItem {
+  Poster: string;
+  Title: string;
+  imdbID: string;
+}
 
-export default function Result({ result, openDetails }) {
+interface ResultProps {
+  result: ResultItem;
+  openDetails: (id: string) => void;
+}
 
-    return (
-        <div className='result' onClick={e => openDetails(result.imdbID)}>
-            <div className='border border-dark border-4'>
-                <img src={result.Poster} alt='' />
-            </div>
-
-            <div className='bg-dark text-white p-2'>
-                <h5>{result.Title}</h5>
-            </div>
-
-        </div>
-    )
+export default function Result({ result, openDetails }: ResultProps) {
+  return (
+    <div
+      className='cursor-pointer'
+      onClick={() => openDetails(result.imdbID)}
+    >
+      <div className='border-gray-700 border-4'>
+        <img
+          src={result.Poster}
+          alt={result.Title}
+          className='w-full h-auto object-cover'
+        />
+      </div>
+      <div className='bg-gray-800 text-white p-2'>
+        <h5 className='text-lg font-semibold'>{result.Title}</h5>
+      </div>
+    </div>
+  );
 }
