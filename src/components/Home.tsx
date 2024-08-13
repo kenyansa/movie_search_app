@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MovieDetails from './MovieDetails';
 import Result from './Result';
 import Search from './Search';
-
-// Define TypeScript types
 interface Movie {
   Poster: string;
   Title: string;
   Year: string;
   imdbRating: string;
   Plot: string;
-//   [key: string]: any;  accommodates any additional properties
 }
 
 interface ResultItem {
@@ -85,17 +82,17 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full main-wrapper flex flex-col items-center min-h-screen bg-gray-900 text-white">
+    <div className="w-full flex flex-col items-center min-h-screen bg-gray-600 text-green-500">
       {state.selected.Title ? (
         <MovieDetails selected={state.selected} close={close} />
       ) : (
-        <header className="w-full text-center mt-5">
-          <h2 className="text-2xl font-bold">Movie Search</h2>
+        <header className="w-full text-center mt-5 px-4">
+          <h2 className="text-3xl font-bold mb-4">Movie Search</h2>
           <Search handleInput={handleInput} SearchResult={SearchResult} />
-          <div className="container mx-auto mt-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="container mx-auto mt-5 px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {state.results.map((result, i) => (
-                <div className="my-2" key={i}>
+                <div className="flex justify-center my-4" key={i}>
                   <Result result={result} openDetails={openDetails} />
                 </div>
               ))}

@@ -6,7 +6,9 @@ export default function App() {
 
   return (
     <>
-      <Home />
+      <div className='bg-slate-400'>
+        <Home />
+      </div>
     </>
   )
 }
