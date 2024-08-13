@@ -6,5 +6,6 @@
 - Display movie details like title, rating, synopsis, and posters
 ## What it Demonstrates: 
 - API integration, 
+- State management in react
 - Handling forms and user input, 
 - Working with external data sources.
